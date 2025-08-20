@@ -41,7 +41,7 @@ const RestoCard = ({ restoData }) => {
         <h3>{restoData?.info?.name}</h3>
         <p>{restoData?.info?.cuisines?.join(", ")}</p>
         <p>
-          ⭐ {restoData?.info?.totalRatingsString} •{" "}
+          ⭐ {restoData?.info?.avgRating} •{" "}
           {restoData?.info?.sla?.slaString}
         </p>
       </div>
