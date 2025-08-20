@@ -18,8 +18,10 @@ const fetchData = async () => {
 
   return (
     <>
+    <div style={{margin:'30px 50px'}}>
       <Navbar/>
       <RestaurantList restaurants={resList}/>
+      </div>
     </>
   );
 };

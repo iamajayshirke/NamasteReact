@@ -1,16 +1,28 @@
-import RestoCard from "./RestoCard"
+import { useState } from "react";
+import RestoCard from "./RestoCard";
 
-const RestaurantList = ({restaurants}) => {
-console.log(restaurants,"Res List")
-return (
-    <div style={{display:'flex',alignItems:'center',justifyContent:'center',marginTop:50}}>
-        {restaurants.map((e,i) => {
-            return(
-                <RestoCard key={i} restoData={e}/>
-            )
+const RestaurantList = ({ restaurants }) => {
+  const [search, setSearch] = useState("");
+  return (
+    <>
+      <div style={{ margin: "20px 0" }}>
+        <input onChange={(e) => setSearch(e.target.value)} value={search} />
+        <button onClick={()=>{}}>Top Rated Restaurants</button>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "space-between",
+          alignItems: "flex-start",
+        }}
+      >
+        {restaurants.map((e, i) => {
+          return <RestoCard key={i} restoData={e} />;
         })}
-    </div>
-)
-}
+      </div>
+    </>
+  );
+};
 
-export default RestaurantList
+export default RestaurantList;
