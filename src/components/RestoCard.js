@@ -28,6 +28,7 @@ const RestoCard = ({ restoData }) => {
       style={cardStyle}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={()=> {console.log(restoData,"Rest Data")}}
     >
       <img
         src={`${SWIGGY_IMG_URL}${restoData?.info?.cloudinaryImageId}`} // Replace with a real image URL
