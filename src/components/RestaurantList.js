@@ -2,15 +2,19 @@ import { useEffect, useState } from "react";
 import RestoCard from "./RestoCard";
 
 const RestaurantList = ({ restaurants }) => {
+  console.log(restaurants,"Restauarnats")
   const [search, setSearch] = useState("");
   const [filteredData, setFilteredData] = useState(restaurants);
+  useEffect(()=>{
+    console.log(filteredData)
+  },[filteredData])
   useEffect(() => {
-    console.log(filteredData,"Data")
     const filterData = restaurants.filter((e) => {
               return e?.info?.name?.toLowerCase().includes(search.toLowerCase());
             });
             setFilteredData(filterData)
   }, [search]);
+  console.log(filteredData,"Filtered Data")
   return (
     <>
       <div style={{ margin: "20px 0" }}>
