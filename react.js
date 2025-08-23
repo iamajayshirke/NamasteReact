@@ -3,6 +3,7 @@ import * as ReactDOM from "react-dom/client";
 import Navbar from "./src/components/Navbar";
 import RestaurantList from "./src/components/RestaurantList";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import RestoDetails from "./src/components/RestoDetails";
 
 const ReactComp = () => {
   const [resList, setResList] = useState([]);
@@ -64,7 +65,12 @@ const appRouter = createBrowserRouter([
         path: "/offer",
         element: <>Offers</>,
       },
+      {
+        path:"/resto/:resId",
+        element:<RestoDetails />
+      }
     ],
+    errorElement: <>Not Found</>
   },
 ]);
 

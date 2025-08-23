@@ -28,7 +28,9 @@ const RestoCard = ({ restoData }) => {
       style={cardStyle}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={()=> {console.log(restoData,"Rest Data")}}
+      onClick={()=> {console.log(restoData,"Rest Data ")
+        
+      }}
     >
       <img
         src={`${SWIGGY_IMG_URL}${restoData?.info?.cloudinaryImageId}`} // Replace with a real image URL
@@ -42,7 +44,7 @@ const RestoCard = ({ restoData }) => {
         <h3>{restoData?.info?.name}</h3>
         <p>{restoData?.info?.cuisines?.join(", ")}</p>
         <p>
-          ⭐ {restoData?.info?.avgRating} •{" "}
+          ⭐{restoData?.info?.avgRating} •{" "}
           {restoData?.info?.sla?.slaString}
         </p>
       </div>
