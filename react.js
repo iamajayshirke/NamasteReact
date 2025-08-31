@@ -32,13 +32,13 @@ const ReactComp = () => {
   if (loading) {
     return (
       <div style={{ margin: "30px 50px" }}>
-        <h1>Loading...</h1>
+        <h1>Loading....</h1>
       </div>
     );
   }
 
   return (
-    <div style={{ margin: "30px 50px" }}>
+    <div className="px-3 px-md-5">
       <RestaurantList restaurants={resList} />
     </div>
   );

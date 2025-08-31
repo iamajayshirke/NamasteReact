@@ -24,31 +24,49 @@ const RestoCard = ({ restoData }) => {
     : defaultCardStyle;
 
   return (
-    <div
-      style={cardStyle}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={()=> {console.log(restoData,"Rest Data ")
+    // <div
+    //   style={cardStyle}
+    //   onMouseEnter={() => setIsHovered(true)}
+    //   onMouseLeave={() => setIsHovered(false)}
+    //   onClick={()=> {console.log(restoData,"Rest Data ")
         
-      }}
-    >
-      <img
-        src={`${SWIGGY_IMG_URL}${restoData?.info?.cloudinaryImageId}`} // Replace with a real image URL
-        alt={restoData?.info?.name}
-        style={{
-          width: "100%",
-          borderRadius: "8px 8px 0 0",
-        }}
-      />
-      <div style={{ padding: "10px" }}>
-        <h3>{restoData?.info?.name}</h3>
-        <p>{restoData?.info?.cuisines?.join(", ")}</p>
-        <p>
-          ⭐{restoData?.info?.avgRating} •{" "}
-          {restoData?.info?.sla?.slaString}
-        </p>
-      </div>
-    </div>
+    //   }}
+    // >
+    //   <img
+    //     src={`${SWIGGY_IMG_URL}${restoData?.info?.cloudinaryImageId}`} // Replace with a real image URL
+    //     alt={restoData?.info?.name}
+    //     style={{
+    //       width: "100%",
+    //       borderRadius: "8px 8px 0 0",
+    //     }}
+    //   />
+    //   <div style={{ padding: "10px" }}>
+    //     <h3>{restoData?.info?.name}</h3>
+    //     <p>{restoData?.info?.cuisines?.join(", ")}</p>
+    //     <p>
+    //       ⭐{restoData?.info?.avgRating} •{" "}
+    //       {restoData?.info?.sla?.slaString}
+    //     </p>
+    //   </div>
+    // </div>
+    <div className="group relative z-0">
+              <img
+                alt={restoData?.info?.name}
+                src={`${SWIGGY_IMG_URL}${restoData?.info?.cloudinaryImageId}`}
+                className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
+              />
+              <div className="mt-4 flex justify-between">
+                <div>
+                  <h3 className="text-sm text-gray-700">
+                      <span aria-hidden="true" className="absolute inset-0" />
+                      {restoData?.info?.name}
+                    
+                  </h3>
+                  <p className="mt-1 text-sm text-gray-500">{restoData?.info?.cuisines?.join(", ")}</p>
+                </div>
+                <p className="text-sm font-medium text-gray-900">⭐{restoData?.info?.avgRating} •{" "}{restoData?.info?.sla?.slaString}</p>
+              </div>
+            </div>
   );
 };
 
